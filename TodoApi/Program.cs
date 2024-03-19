@@ -14,10 +14,10 @@ builder.Services.AddCors(option=>option.AddPolicy("AllowAll",builder=>{
 
 var app = builder.Build();
 app.UseCors("AllowAll");
-if(app.Environment.IsDevelopment()){
+// if(app.Environment.IsDevelopment()){
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+// }
 //שליפת כל הנתונים 
 app.MapGet("/", async (ToDoDbContext dbContext) =>
 {
