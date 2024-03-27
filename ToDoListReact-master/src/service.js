@@ -17,12 +17,13 @@ axios.interceptors.response.use(
   }
 );
 
-axios.defaults.baseURL='http://localhost:5101/'
-
+// axios.defaults.baseURL='http://localhost:5101/'
+axios.defaults.baseURL=process.env.REACT_APP_API
+const apiUrl=process.env.REACT_APP_API
 export default {
   
   getTasks: async () => {   
-    const result = await axios.get(``)    
+    const result = await axios.get(`${apiUrl}`)    
     return result.data;
   },
 
